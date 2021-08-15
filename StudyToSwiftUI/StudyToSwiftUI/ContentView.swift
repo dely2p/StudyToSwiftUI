@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    static let taskDateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
     var body: some View {
-        Text("가나다라마바사아자차카파타하abcdefghigklmnopqrstuvwxyz")
-            .lineLimit(nil)
-            .truncationMode(.head)
-            .font(.largeTitle)
-            .multilineTextAlignment(.center)
-            .foregroundColor(.blue)
-            .background(Color.yellow)
-            .lineSpacing(50)
+        let dueDate = Date()
+        Text("Tast due date: \(dueDate, formatter: Self.taskDateFormat)")
     }
 }
 
