@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image("apple")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
+        Text("apple")
+            .background(LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom))
     }
 }
 
