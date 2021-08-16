@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image(systemName: "circle")
-            .foregroundColor(.blue)
+        Image("apple")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
