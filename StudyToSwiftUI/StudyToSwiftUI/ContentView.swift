@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        guard let image = UIImage(named: "apple") else {
-            fatalError("Fail to load image")
-        }
-        return Image(uiImage: image)
+        Image(systemName: "circle")
+            .foregroundColor(.blue)
     }
 }
 
