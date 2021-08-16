@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image("apple")
+        guard let image = UIImage(named: "apple") else {
+            fatalError("Fail to load image")
+        }
+        return Image(uiImage: image)
     }
 }
 
