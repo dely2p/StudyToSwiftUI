@@ -10,17 +10,21 @@ import SwiftUI
 struct ContentView: View {
     @State var users = ["피카츄", "라이츄", "파이리"]
     var body: some View {
-        List {
-            ForEach(users, id: \.self) { user in
-                Text(user)
+        NavigationView {
+            List {
+                ForEach(users, id: \.self) { user in
+                    Text(user)
+                }
+                .onMove(perform: move)
             }
-            .onDelete(perform: delete)
+            .navigationBarItems(trailing: EditButton())
         }
     }
     
-    func delete(at offsets: IndexSet) {
-        if let first = offsets.first {
-            users.remove(at: first)
+    func move(from source: IndexSet, to destination: Int) {
+        let reversedSource = source.sorted()
+        for index in reversedSource.reversed() {
+            users.insert(users.remove(at: index), at: destination)
         }
     }
 }
