@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @State var showGreeting = true
     var body: some View {
-        if Bool.random() {
-            return AnyView(Image("apple"))
-        } else {
-            return AnyView(Text("fail"))
+        Group {
+            if Bool.random() {
+                Image("apple")
+            } else {
+                Text("fail")
+            }
         }
     }
 }
