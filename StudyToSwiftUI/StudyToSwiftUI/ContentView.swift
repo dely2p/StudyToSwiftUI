@@ -10,17 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @State var showDetails = false
     var body: some View {
-        Button(action: {
-            // action
-            self.showDetails.toggle()
-        }, label: {
-            // display
-            Text("Show details")
-        })
-        if showDetails {
-            Text("You should see me in a crown")
-                .font(.largeTitle)
-                .lineLimit(nil)
+        VStack {
+            Button(action: {
+                // action
+                self.showDetails.toggle()
+                print(showDetails)
+            }, label: {
+                // display
+                Text("Show details")
+            })
+            if showDetails {
+                Text("You should see me in a crown")
+                    .font(.largeTitle)
+                    .lineLimit(nil)
+            }
         }
     }
 }
