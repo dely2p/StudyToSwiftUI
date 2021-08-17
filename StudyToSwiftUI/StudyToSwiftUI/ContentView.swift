@@ -10,13 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var showGreeting = true
     var body: some View {
-        Group {
-            if Bool.random() {
-                Image("apple")
-            } else {
-                Text("fail")
-            }
-        }
+        Text("Hello World")
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.yellow)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
