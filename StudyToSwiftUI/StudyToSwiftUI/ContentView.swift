@@ -7,26 +7,21 @@
 
 import SwiftUI
 
-struct TastRow: View {
+struct GroupedRow: View {
     var body: some View {
-        Text("Task item")
+        Text("Grouped Row")
     }
 }
 
 struct ContentView: View {
     var body: some View {
         List {
-            Section(header: Text("Important")) {
-                TastRow()
-                TastRow()
-                TastRow()
+            Section(header: Text("GroupedRow")) {
+                GroupedRow()
+                GroupedRow()
+                GroupedRow()
             }
-            Section(header: Text("Other")) {
-                TastRow()
-                TastRow()
-                TastRow()
-            }
-        }
+        }.listStyle(GroupedListStyle())
     }
 }
 
