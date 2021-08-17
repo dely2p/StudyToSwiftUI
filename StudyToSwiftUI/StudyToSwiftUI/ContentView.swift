@@ -7,22 +7,16 @@
 
 import SwiftUI
 
-struct DetailView: View {
-    var body: some View {
-        Text("Detail")
-    }
-}
-
 struct ContentView: View {
+    @State var showGreeting = true
     var body: some View {
-        NavigationView {
-            Text("Hi")
-                .navigationBarTitle(Text("Intro"))
-                .navigationBarItems(trailing:
-                    NavigationLink(
-                        destination: DetailView()) {
-                        Image(systemName: "arrowtriangle.right.circle.fill").resizable().frame(width: 25, height: 25, alignment: .trailing)
-            })
+        VStack {
+            Toggle(isOn: $showGreeting, label: {
+                Text("welcome")
+            }).padding()
+            if showGreeting {
+                Text("Hello")
+            }
         }
     }
 }
