@@ -7,27 +7,21 @@
 
 import SwiftUI
 
-struct Family: Identifiable {
-    var id = UUID()
-    var name: String
-}
-
-struct FamilyRow: View {
-    var family: Family
-    var body: some View {
-        Text("Family: \(family.name)")
-    }
-}
-
 struct ContentView: View {
+    @State var users = ["피카츄", "라이츄", "파이리"]
     var body: some View {
-        let first = Family(name: "피카츄")
-        let second = Family(name: "라이츄")
-        let third = Family(name: "파이리")
-        let families = [first, second, third]
-        return List(families, rowContent: { family in
-            FamilyRow(family: family)
-        })
+        List {
+            ForEach(users, id: \.self) { user in
+                Text(user)
+            }
+            .onDelete(perform: delete)
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        if let first = offsets.first {
+            users.remove(at: first)
+        }
     }
 }
 
