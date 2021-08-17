@@ -10,13 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State var showGreeting = true
     var body: some View {
-        VStack {
-            Toggle(isOn: $showGreeting, label: {
-                Text("welcome")
-            }).padding()
-            if showGreeting {
-                Text("Hello")
-            }
+        VStack(alignment: .leading, spacing: 10) {
+            Text("SwiftUI")
+                .padding(.bottom, 30)
+            Divider()
+            Text("Hello")
         }
     }
 }
