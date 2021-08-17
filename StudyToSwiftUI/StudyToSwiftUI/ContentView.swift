@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var showGreeting = true
     var body: some View {
-        ZStack() {
-            Image("apple")
-            Text("apple")
-                .foregroundColor(.blue)
+        if Bool.random() {
+            return AnyView(Image("apple"))
+        } else {
+            return AnyView(Text("fail"))
         }
     }
 }
