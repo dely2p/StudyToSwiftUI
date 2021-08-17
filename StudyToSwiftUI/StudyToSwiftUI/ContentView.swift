@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showGreeting = true
+    @State var name: String = "dely"
     var body: some View {
-        Text("Hello World")
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color.yellow)
-            .edgesIgnoringSafeArea(.all)
+        VStack {
+            TextField("Enter your name", text: $name)
+            Text("Hello, \(name)!")
+        }
     }
 }
 
