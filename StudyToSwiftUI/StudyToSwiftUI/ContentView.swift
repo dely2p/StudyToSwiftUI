@@ -7,23 +7,22 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var showDetails = false
+struct DetailView: View {
     var body: some View {
-        VStack {
-            Button(action: {
-                // action
-                self.showDetails.toggle()
-                print(showDetails)
-            }, label: {
-                // display
-                Text("Show details")
+        Text("Detail")
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        NavigationView {
+            Text("Hi")
+                .navigationBarTitle(Text("Intro"))
+                .navigationBarItems(trailing:
+                    NavigationLink(
+                        destination: DetailView()) {
+                        Image(systemName: "arrowtriangle.right.circle.fill").resizable().frame(width: 25, height: 25, alignment: .trailing)
             })
-            if showDetails {
-                Text("You should see me in a crown")
-                    .font(.largeTitle)
-                    .lineLimit(nil)
-            }
         }
     }
 }
