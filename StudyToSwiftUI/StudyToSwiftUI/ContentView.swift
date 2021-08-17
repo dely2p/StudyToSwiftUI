@@ -7,14 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var name: String = ""
+struct FamilyRow: View {
+    var name: String
     var body: some View {
-        VStack {
-            SecureField("Enter your name", text: $name)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            Text("Hello, \(name)!")
+        Text("Family: \(name)")
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        List {
+            FamilyRow(name: "피카츄")
+            FamilyRow(name: "라이츄")
+            FamilyRow(name: "파이리")
         }
     }
 }
