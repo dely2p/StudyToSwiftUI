@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @State var showGreeting = true
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("SwiftUI")
-                .padding(.bottom, 30)
-            Divider()
-            Text("Hello")
+        ZStack() {
+            Image("apple")
+            Text("apple")
+                .foregroundColor(.blue)
         }
     }
 }
