@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var name: String = "dely"
+    @State var name: String = ""
     var body: some View {
         VStack {
             TextField("Enter your name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
             Text("Hello, \(name)!")
         }
     }
