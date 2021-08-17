@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showDetails = false
     var body: some View {
-        Text("apple")
-            .foregroundColor(.white)
-            .background(
-                Image("apple")
-                    .resizable()
-                    .frame(width: 300, height: 100, alignment: .center)
-            )
+        Button(action: {
+            // action
+            self.showDetails.toggle()
+        }, label: {
+            // display
+            Text("Show details")
+        })
+        if showDetails {
+            Text("You should see me in a crown")
+                .font(.largeTitle)
+                .lineLimit(nil)
+        }
     }
 }
 
