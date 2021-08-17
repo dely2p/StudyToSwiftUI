@@ -7,24 +7,25 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var users = ["피카츄", "라이츄", "파이리"]
+struct TastRow: View {
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(users, id: \.self) { user in
-                    Text(user)
-                }
-                .onMove(perform: move)
-            }
-            .navigationBarItems(trailing: EditButton())
-        }
+        Text("Task item")
     }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        let reversedSource = source.sorted()
-        for index in reversedSource.reversed() {
-            users.insert(users.remove(at: index), at: destination)
+}
+
+struct ContentView: View {
+    var body: some View {
+        List {
+            Section(header: Text("Important")) {
+                TastRow()
+                TastRow()
+                TastRow()
+            }
+            Section(header: Text("Other")) {
+                TastRow()
+                TastRow()
+                TastRow()
+            }
         }
     }
 }
