@@ -22,3 +22,17 @@ Text("가나다라마바사아자차카파타하abcdefghigklmnopqrstuvwxyz")
     .background(Color.yellow) // 배경색
     .lineSpacing(50) // 행간
 ```
+
+- Date	
+
+```swift
+static let taskDateFormat: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    return formatter
+}()
+var body: some View {
+    let dueDate = Date()
+    Text("Tast due date: \(dueDate, formatter: Self.taskDateFormat)")
+}
+```
