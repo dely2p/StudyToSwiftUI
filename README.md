@@ -25,14 +25,23 @@ Text("가나다라마바사아자차카파타하abcdefghigklmnopqrstuvwxyz")
 
 - Date	
 
+	```swift
+	static let taskDateFormat: DateFormatter = {
+	    let formatter = DateFormatter()
+	    formatter.dateStyle = .long
+	    return formatter
+	}()
+	var body: some View {
+	    let dueDate = Date()
+	    Text("Tast due date: \(dueDate, formatter: Self.taskDateFormat)")
+	}
+	```
+
+> UIImage
+
 ```swift
-static let taskDateFormat: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .long
-    return formatter
-}()
-var body: some View {
-    let dueDate = Date()
-    Text("Tast due date: \(dueDate, formatter: Self.taskDateFormat)")
+guard let image = UIImage(named: "apple") else {
+    fatalError("Fail to load image")
 }
-```
+return Image(uiImage: image)
+``` 
