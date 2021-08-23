@@ -12,13 +12,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Toggle(isOn: $toggling, label: {
-                    Text("Toggle")
+                Section(footer: Text("footer"), content: {
+                    Toggle(isOn: $toggling, label: {
+                        Text("Toggle")
+                    })
                 })
-                Button(action: {
-                }, label: {
-                    Text("Save changes")
-                })
+                Section {
+                    Button(action: {
+                    }, label: {
+                        Text("Save changes")
+                    })
+                }
             }.navigationBarTitle(Text("Settings"))
         }
     }
