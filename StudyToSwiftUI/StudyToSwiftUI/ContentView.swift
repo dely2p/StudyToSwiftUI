@@ -7,21 +7,20 @@
 
 import SwiftUI
 
-struct GroupedRow: View {
-    var body: some View {
-        Text("Grouped Row")
-    }
-}
-
 struct ContentView: View {
+    @State var toggling = false
     var body: some View {
-        List {
-            Section(header: Text("GroupedRow")) {
-                GroupedRow()
-                GroupedRow()
-                GroupedRow()
-            }
-        }.listStyle(GroupedListStyle())
+        NavigationView {
+            Form {
+                Toggle(isOn: $toggling, label: {
+                    Text("Toggle")
+                })
+                Button(action: {
+                }, label: {
+                    Text("Save changes")
+                })
+            }.navigationBarTitle(Text("Settings"))
+        }
     }
 }
 
