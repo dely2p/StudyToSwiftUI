@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showingAdvancedOptions = false
     @State var toggling = false
     var body: some View {
         NavigationView {
             Form {
-                Section(footer: Text("footer"), content: {
-                    Toggle(isOn: $toggling, label: {
-                        Text("Toggle")
-                    })
-                })
                 Section {
-                    Button(action: {
-                    }, label: {
-                        Text("Save changes")
+                    Toggle(isOn: $showingAdvancedOptions, label: {
+                        Text("showingAdvancedOptions")
                     })
+                    
+                    if showingAdvancedOptions {
+                        Toggle(isOn: $toggling, label: {
+                            Text("toggling")
+                        })
+                    }
                 }
-            }.navigationBarTitle(Text("Settings"))
+            }
         }
     }
 }

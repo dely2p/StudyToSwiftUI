@@ -45,3 +45,11 @@ guard let image = UIImage(named: "apple") else {
 }
 return Image(uiImage: image)
 ``` 
+
+- 이미지 사이즈 맞추기
+
+```swift
+Image("apple")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+```
