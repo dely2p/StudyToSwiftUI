@@ -23,6 +23,13 @@ Text("가나다라마바사아자차카파타하abcdefghigklmnopqrstuvwxyz")
     .lineSpacing(50) // 행간
 ```
 
+- Background
+
+	```swift
+	Text("apple")
+            .background(LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom))
+	```
+
 - Date	
 
 	```swift
