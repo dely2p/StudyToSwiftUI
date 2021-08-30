@@ -55,8 +55,16 @@ return Image(uiImage: image)
 
 - 이미지 사이즈 맞추기
 
+	```swift
+	Image("apple")
+	        .resizable()
+	        .aspectRatio(contentMode: .fit)
+	```
+
+> 도형그리기
+
 ```swift
-Image("apple")
-        .resizable()
-        .aspectRatio(contentMode: .fit)
+Circle()
+    .fill(Color.blue)
+    .frame(width: 250, height: 250, alignment: .center)
 ```
