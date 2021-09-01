@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var grade: Double = 0
+    @State var age = 22
     var body: some View {
         VStack {
-            Slider(value: $grade, in: 0...100, step: 1)
-            Text("Your grade is \(grade)")
+            Stepper("Enter your age", value: $age, in: 0...130)
+            Text("Your age is \(age)")
         }
     }
 }
