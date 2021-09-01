@@ -8,24 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showingAdvancedOptions = false
-    @State var toggling = false
+    var colors = ["Red", "Green", "Blue", "Tartan"]
+    @State var selectedColor = 0
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Toggle(isOn: $showingAdvancedOptions, label: {
-                        Text("showingAdvancedOptions")
-                    })
-                    
-                    if showingAdvancedOptions {
-                        Toggle(isOn: $toggling, label: {
-                            Text("toggling")
-                        })
-                    }
-                }
+        Picker(selection: $selectedColor, label: Text("Choose a color"), content: {
+            ForEach(0..<colors.count) {
+                Text(self.colors[$0])
             }
-        }
+        })
     }
 }
 
