@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var colors = ["Red", "Green", "Blue", "Tartan"]
-    @State var selectedColor = 0
+    @State var grade: Double = 0
     var body: some View {
         VStack {
-            Picker(selection: $selectedColor, label: Text("Choose a color"), content: {
-                ForEach(0..<colors.count) {
-                    Text(self.colors[$0])
-                }
-            })
-            
-            Text("You selected \(colors[selectedColor])")
+            Slider(value: $grade, in: 0...100, step: 1)
+            Text("Your grade is \(grade)")
         }
     }
 }
