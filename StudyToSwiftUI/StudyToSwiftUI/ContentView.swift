@@ -10,12 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State var age = 22
     var body: some View {
-        NavigationView() {
-            NavigationLink(
-                destination: ContentDetail(),
-                label: {
-                    /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
-                }).navigationTitle("타이틀")
+        TabView {
+            ContentFirst()
+                .tabItem {
+                    Image(systemName: "list.dash")
+                    Text("Menu")
+                }
+            ContentSecond()
+                .tabItem {
+                    Image(systemName: "square.and.pencil")
+                    Text("Order")
+                }
         }
         
     }
