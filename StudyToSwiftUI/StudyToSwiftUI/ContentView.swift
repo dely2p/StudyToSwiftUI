@@ -10,10 +10,14 @@ import SwiftUI
 struct ContentView: View {
     @State var age = 22
     var body: some View {
-        VStack {
-            Stepper("Enter your age", value: $age, in: 0...130)
-            Text("Your age is \(age)")
+        NavigationView() {
+            NavigationLink(
+                destination: ContentDetail(),
+                label: {
+                    /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
+                }).navigationTitle("타이틀")
         }
+        
     }
 }
 

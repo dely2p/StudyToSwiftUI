@@ -16,6 +16,7 @@
 		A330E1F826C6B46B002CEF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A330E1F626C6B46B002CEF5B /* LaunchScreen.storyboard */; };
 		A330E20326C6B46C002CEF5B /* StudyToSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330E20226C6B46C002CEF5B /* StudyToSwiftUITests.swift */; };
 		A330E20E26C6B46C002CEF5B /* StudyToSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A330E20D26C6B46C002CEF5B /* StudyToSwiftUIUITests.swift */; };
+		A37AD21526E3B62500AF5AAA /* ContentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AD21426E3B62500AF5AAA /* ContentDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A330E20926C6B46C002CEF5B /* StudyToSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyToSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A330E20D26C6B46C002CEF5B /* StudyToSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyToSwiftUIUITests.swift; sourceTree = "<group>"; };
 		A330E20F26C6B46C002CEF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A37AD21426E3B62500AF5AAA /* ContentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A330E1F926C6B46B002CEF5B /* Info.plist */,
 				A330E1EE26C6B467002CEF5B /* StudyToSwiftUI.xcdatamodeld */,
 				A330E1F326C6B46B002CEF5B /* Preview Content */,
+				A37AD21426E3B62500AF5AAA /* ContentDetail.swift */,
 			);
 			path = StudyToSwiftUI;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37AD21526E3B62500AF5AAA /* ContentDetail.swift in Sources */,
 				A330E1E926C6B467002CEF5B /* AppDelegate.swift in Sources */,
 				A330E1EB26C6B467002CEF5B /* SceneDelegate.swift in Sources */,
 				A330E1F026C6B467002CEF5B /* StudyToSwiftUI.xcdatamodeld in Sources */,
