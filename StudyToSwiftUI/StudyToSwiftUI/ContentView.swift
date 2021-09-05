@@ -15,7 +15,7 @@ struct ContentView: View {
         }, label: {
             /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
         }).alert(isPresented: $showAlert, content: {
-            Alert(title: Text("title"), message: Text("This is a alert message"), dismissButton: .default(Text("Dismiss")))
+            Alert(title: Text("title"), message: Text("This is a alert message"), primaryButton: .destructive(Text("Primary")), secondaryButton: .cancel())
         })
     }
 }
