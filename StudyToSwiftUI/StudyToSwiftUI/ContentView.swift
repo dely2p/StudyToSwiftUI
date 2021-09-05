@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var age = 22
+    @State private var showAlert = false
     var body: some View {
-        TabView {
-            ContentFirst()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Menu")
-                }
-            ContentSecond()
-                .tabItem {
-                    Image(systemName: "square.and.pencil")
-                    Text("Order")
-                }
-        }
-        
+        Button(action: {
+            self.showAlert = true
+        }, label: {
+            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+        }).alert(isPresented: $showAlert, content: {
+            Alert(title: Text("title"), message: Text("This is a alert message"), dismissButton: .default(Text("Dismiss")))
+        })
     }
 }
 
