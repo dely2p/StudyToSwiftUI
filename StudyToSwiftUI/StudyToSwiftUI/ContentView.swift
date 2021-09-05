@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showAlert = false
+    @State var showSheet = false
     var body: some View {
         Button(action: {
-            self.showAlert = true
+            self.showSheet = true
         }, label: {
             /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-        }).alert(isPresented: $showAlert, content: {
-            Alert(title: Text("title"), message: Text("This is a alert message"), primaryButton: .destructive(Text("Primary")), secondaryButton: .cancel())
+        })
+        .actionSheet(isPresented: $showSheet, content: {
+            ActionSheet(title: Text("Title"), message: Text("message"), buttons: [.default(Text("Dismiss")), .cancel(Text("cancel"))])
         })
     }
 }
