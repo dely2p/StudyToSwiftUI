@@ -17,8 +17,10 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
+                .environment(\.colorScheme, .dark)
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE"))
             ContentView()
+                .environment(\.colorScheme, .light)
                 .previewDevice(PreviewDevice(rawValue: "iPhone XS"))
         }
     }
